@@ -17,10 +17,6 @@
 # Give out a notice, that every installation needs the password again
 # because we're doing it with only one command execution permission.
 
-# If swap file created last time, remove it to avoid complications
-os.remove(/home/Python/.JuliaFractal.py.swp)
-
-# Check if necessary tools are installed otherwise install them
 import os, sys
 
 # Python code for Julia Fractal
@@ -95,6 +91,3 @@ if __name__ == "__main__":
 
     # To display the picture with built-in imageviewer [by-default]
      bitmap.show()
-
-# If swap file created remove it to avoid complications
-os.remove(/home/Python/.JuliaFractal.py.swp)
