@@ -21,19 +21,7 @@
 os.remove(/home/Python/.JuliaFractal.py.swp)
 
 # Check if necessary tools are installed otherwise install them
-import os; import sys
-
-print("Checking for required programs to run FractalPrime…")
-
-if os.path.isfile('/usr/bin/zenity') == False:inp=input("Can't find Zenity. Install it? [Y/N]")
-    inp=input("Can't find Zenity. Install it? [Y/N]")
-
-  codefile=
-if os.path.isfile('/usr/share/doc/python3-pillow') == False:
-    inp=input("Can't find Pillow. Install it? [Y/N]")
-
-if os.path.isfile('/usr/bin/python3') == False:
-    inp=input("Can't find Python v.3. Install it? [Y/N]")
+import os, sys
 
 # Python code for Julia Fractal
 from PIL import Image
