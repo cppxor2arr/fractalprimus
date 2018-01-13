@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2.7
  
                     ##########################
                     #  JuliaFractal Creator  #
@@ -19,11 +19,11 @@ if __name__ == "__main__":
   
     # Creating the new image in RGB mode
     bitmap = Image.new("RGB", (w, h), "white")
- 
-    # Allocating the storage for the image and
+
+     # Allocating the storage for the image and
     # Loading the pixel data.
     pix = bitmap.load()
-    
+   
     # Setting up the variables according to 
     # The equation to  create the fractal
     cX, cY = -0.7, 0.27015
@@ -43,7 +43,8 @@ if __name__ == "__main__":
             # Convert byte to RGB (3 bytes), kinda 
             # Magic to get nice colors
             pix[x,y] = (i << 21) + (i << 10) + i*8
-     
+
+    
     #    <-- OUTPUT -->    #
     # To display the created fractal in firefox browser uncomment
     # The following pattern
@@ -77,5 +78,6 @@ if __name__ == "__main__":
     #browser = webbrowser.get("opera")
     #browser.open(bitmap.show())
 
-    # To display the picture with built-in imageviewer [by-default]
-    bitmap.save("julia_fractal.png")
+    # To display the picture with built-in imageviewer [by-defauilt]
+    image_name=raw_input("Save image as: ")
+    bitmap.save(image_name + ".png")
