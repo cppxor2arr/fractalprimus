@@ -6,18 +6,34 @@
                     #        v_1.2.0         #
                     ##########################
 
-# After finishing the script. Export the available browsers into a .conf file
-# to make it easier edit existing settings. If done link them to this file.
-# Set up a graphical interface, with the available options, to make usage
-# of program easier. Ask if programs which not exist yet on a pc, if they
-# should be installed. If so then install them. Detect the system which the
-# program is running on. To get out the right install commands.
-# Best is to start the commands in a separate script, for security reasons and
-# push user with 'su -c' to allow the installation. Otherwise it won't work.
-# Give out a notice, that every installation needs the password again
-# because we're doing it with only one command execution permission.
 
+<<<<<<< HEAD
+
+
+
+# Check if necessary tools are installed otherwise install them
+import os; import sys
+
+
+print("Checking for required programs to run FractalPrime…")
+
+
+if os.path.isfile('/usr/bin/zenity') == False:
+  inp=input("Can't find Zenity. Install it? [Y/N]")
+
+
+  codefile=
+if os.path.isfile('/usr/share/doc/python3-pillow') == False:
+  inp=input("Can't find Pillow. Install it? [Y/N]")
+
+
+if os.path.isfile('/usr/bin/python3') == False:
+  inp=input("Can't find Python v.3. Install it? [Y/N]")
+
+
+=======
 import os, sys
+>>>>>>> ecfa935b97378c3282d95dda8d86215ccd6a131c
 
 # Python code for Julia Fractal
 from PIL import Image
@@ -91,3 +107,8 @@ if __name__ == "__main__":
 
     # To display the picture with built-in imageviewer [by-default]
      bitmap.show()
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> ecfa935b97378c3282d95dda8d86215ccd6a131c
