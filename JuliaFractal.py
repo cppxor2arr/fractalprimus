@@ -92,4 +92,4 @@ if __name__ == "__main__":
           break
     else:
       print("Nothing saved!")
-      bitmap.show()
+      bitmap.show(image_name + ".png")
