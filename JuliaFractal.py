@@ -7,6 +7,7 @@
                     ##########################
 
 
+<<<<<<< HEAD
 
 
 
@@ -30,10 +31,12 @@ if os.path.isfile('/usr/bin/python3') == False:
   inp=input("Can't find Python v.3. Install it? [Y/N]")
 
 
+=======
+import os, sys
+>>>>>>> ecfa935b97378c3282d95dda8d86215ccd6a131c
 
 # Python code for Julia Fractal
 from PIL import Image
-
   
 # Driver function
 if __name__ == "__main__":
@@ -68,12 +71,8 @@ if __name__ == "__main__":
             # Convert byte to RGB (3 bytes), kinda 
             # Magic to get nice colors
             pix[x,y] = (i << 21) + (i << 10) + i*8
- 
-
-    
-    
+     
     #    <-- OUTPUT -->    #
-
     # To display the created fractal in firefox browser uncomment
     # The following pattern
     #import webbrowser
@@ -81,7 +80,6 @@ if __name__ == "__main__":
     #webbrowser.register('firefox', None,webbrowser.BackgroundBrowser(firefox_path),1)
     #browser = webbrowser.get("firefox")
     #browser.open(bitmap.show())
-
 
     # To display the created fractal in chromium browser uncomment
     # The following pattern
@@ -91,7 +89,6 @@ if __name__ == "__main__":
     #browser = webbrowser.get("chromium")
     #browser.open(bitmap.show())
 
-
     # To display the created fractal in qupzilla browser uncomment
     # The following pattern
     #import webbrowser
@@ -99,7 +96,6 @@ if __name__ == "__main__":
     #webbrowser.register('qupzilla', None,webbrowser.BackgroundBrowser(qupzilla_path),1)
     #browser = webbrowser.get("qupzilla")
     #browser.open(bitmap.show())
-
     
     # To display the created fractal in opera browser uncomment
     # The following pattern
@@ -109,8 +105,10 @@ if __name__ == "__main__":
     #browser = webbrowser.get("opera")
     #browser.open(bitmap.show())
 
-
     # To display the picture with built-in imageviewer [by-default]
      bitmap.show()
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ecfa935b97378c3282d95dda8d86215ccd6a131c
