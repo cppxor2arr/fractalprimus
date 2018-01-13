@@ -78,7 +78,18 @@ if __name__ == "__main__":
     #browser.open(bitmap.show())
 
     # To display the picture with built-in imageviewer [by-defauilt]
-    image_name=raw_input("Save image as: ")
-    bitmap.save(image_name + ".png")
-    img = Image.open(image_name + ".png")
-    img.show()
+    decision = raw_input("Save image as .png? [Y/N] ").lower()
+    if decision == "y":
+      image_name = raw_input("Filename: ")
+      while os.path.exists(image_name + ".png"):
+        print("Choose another filename..." + image_name + ".png already exists!")
+        image_name = raw_input("Filename: ")
+        if os.path.exists(image_name + ".png") == False:
+          bitmap.save(image_name + ".png")
+          img = Image.open(image_name + ".png")
+          print("Image as " + image_name + ".png saved!")
+          img.show()
+          break
+    else:
+      print("Nothing saved!")
+      bitmap.show()
