@@ -17,37 +17,26 @@
 # Give out a notice, that every installation needs the password again
 # because we're doing it with only one command execution permission.
 
-
-
-
 # If swap file created last time, remove it to avoid complications
 os.remove(/home/Python/.JuliaFractal.py.swp)
-
-
 
 # Check if necessary tools are installed otherwise install them
 import os; import sys
 
 print("Checking for required programs to run FractalPrime…")
 
-
-if os.path.isfile('/usr/bin/zenity') == False:
-  inp=input("Can't find Zenity. Install it? [Y/N]")
-
+if os.path.isfile('/usr/bin/zenity') == False:inp=input("Can't find Zenity. Install it? [Y/N]")
+    inp=input("Can't find Zenity. Install it? [Y/N]")
 
   codefile=
 if os.path.isfile('/usr/share/doc/python3-pillow') == False:
-  inp=input("Can't find Pillow. Install it? [Y/N]")
-
+    inp=input("Can't find Pillow. Install it? [Y/N]")
 
 if os.path.isfile('/usr/bin/python3') == False:
-  inp=input("Can't find Python v.3. Install it? [Y/N]")
-
-
+    inp=input("Can't find Python v.3. Install it? [Y/N]")
 
 # Python code for Julia Fractal
 from PIL import Image
-
   
 # Driver function
 if __name__ == "__main__":
@@ -82,12 +71,8 @@ if __name__ == "__main__":
             # Convert byte to RGB (3 bytes), kinda 
             # Magic to get nice colors
             pix[x,y] = (i << 21) + (i << 10) + i*8
- 
-
-    
-    
+     
     #    <-- OUTPUT -->    #
-
     # To display the created fractal in firefox browser uncomment
     # The following pattern
     #import webbrowser
@@ -95,7 +80,6 @@ if __name__ == "__main__":
     #webbrowser.register('firefox', None,webbrowser.BackgroundBrowser(firefox_path),1)
     #browser = webbrowser.get("firefox")
     #browser.open(bitmap.show())
-
 
     # To display the created fractal in chromium browser uncomment
     # The following pattern
@@ -105,7 +89,6 @@ if __name__ == "__main__":
     #browser = webbrowser.get("chromium")
     #browser.open(bitmap.show())
 
-
     # To display the created fractal in qupzilla browser uncomment
     # The following pattern
     #import webbrowser
@@ -113,7 +96,6 @@ if __name__ == "__main__":
     #webbrowser.register('qupzilla', None,webbrowser.BackgroundBrowser(qupzilla_path),1)
     #browser = webbrowser.get("qupzilla")
     #browser.open(bitmap.show())
-
     
     # To display the created fractal in opera browser uncomment
     # The following pattern
@@ -123,10 +105,8 @@ if __name__ == "__main__":
     #browser = webbrowser.get("opera")
     #browser.open(bitmap.show())
 
-
     # To display the picture with built-in imageviewer [by-default]
      bitmap.show()
-
 
 # If swap file created remove it to avoid complications
 os.remove(/home/Python/.JuliaFractal.py.swp)
