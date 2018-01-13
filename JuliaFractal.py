@@ -1,39 +1,11 @@
 #!/usr/bin/python3
  
- 
                     ##########################
                     #  JuliaFractal Creator  #
                     #        v_1.2.0         #
                     ##########################
 
-
-<<<<<<< HEAD
-
-
-
-# Check if necessary tools are installed otherwise install them
-import os; import sys
-
-
-print("Checking for required programs to run FractalPrime…")
-
-
-if os.path.isfile('/usr/bin/zenity') == False:
-  inp=input("Can't find Zenity. Install it? [Y/N]")
-
-
-  codefile=
-if os.path.isfile('/usr/share/doc/python3-pillow') == False:
-  inp=input("Can't find Pillow. Install it? [Y/N]")
-
-
-if os.path.isfile('/usr/bin/python3') == False:
-  inp=input("Can't find Python v.3. Install it? [Y/N]")
-
-
-=======
 import os, sys
->>>>>>> ecfa935b97378c3282d95dda8d86215ccd6a131c
 
 # Python code for Julia Fractal
 from PIL import Image
