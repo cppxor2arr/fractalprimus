@@ -6,27 +6,13 @@
                     #        v_1.2.0         #
                     ##########################
 
-# After finishing the script. Export the available browsers into a .conf file
-# to make it easier edit existing settings. If done link them to this file.
-# Set up a graphical interface, with the available options, to make usage
-# of program easier. Ask if programs which not exist yet on a pc, if they
-# should be installed. If so then install them. Detect the system which the
-# program is running on. To get out the right install commands.
-# Best is to start the commands in a separate script, for security reasons and
-# push user with 'su -c' to allow the installation. Otherwise it won't work.
-# Give out a notice, that every installation needs the password again
-# because we're doing it with only one command execution permission.
 
-
-
-
-# If swap file created last time, remove it to avoid complications
-os.remove(/home/Python/.JuliaFractal.py.swp)
 
 
 
 # Check if necessary tools are installed otherwise install them
 import os; import sys
+
 
 print("Checking for required programs to run FractalPrime…")
 
@@ -128,5 +114,3 @@ if __name__ == "__main__":
      bitmap.show()
 
 
-# If swap file created remove it to avoid complications
-os.remove(/home/Python/.JuliaFractal.py.swp)
