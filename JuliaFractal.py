@@ -78,9 +78,4 @@ if __name__ == "__main__":
     #browser.open(bitmap.show())
 
     # To display the picture with built-in imageviewer [by-default]
-     bitmap.show()
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ecfa935b97378c3282d95dda8d86215ccd6a131c
+    bitmap.show()
