@@ -5,7 +5,7 @@
                     #        v_1.2.0         #
                     ##########################
 
-import os, sys
+import os, sys, time
 
 # Python code for Julia Fractal
 from PIL import Image
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # Creating the new image in RGB mode
     bitmap = Image.new("RGB", (w, h), "white")
 
-     # Allocating the storage for the image and
+    # Allocating the storage for the image and
     # Loading the pixel data.
     pix = bitmap.load()
    
@@ -69,15 +69,16 @@ if __name__ == "__main__":
     #webbrowser.register('qupzilla', None,webbrowser.BackgroundBrowser(qupzilla_path),1)
     #browser = webbrowser.get("qupzilla")
     #browser.open(bitmap.show())
-    
+
     # To display the created fractal in opera browser uncomment
     # The following pattern
     #import webbrowser
     #opera_path="/usr/bin/opera"
-    #webbrowser.register('opera', None,webbrowser.BackgroundBrowser(opera_path),1)
-    #browser = webbrowser.get("opera")
+    #webbrowser.register('opera', None,webbrowser.BackgroundBrowser(opera_path),1)     #browser = webbrowser.get("opera")
     #browser.open(bitmap.show())
 
     # To display the picture with built-in imageviewer [by-defauilt]
     image_name=raw_input("Save image as: ")
     bitmap.save(image_name + ".png")
+    img = Image.open(image_name + ".png")
+    img.show()
