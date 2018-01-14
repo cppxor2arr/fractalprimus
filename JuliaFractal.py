@@ -74,7 +74,8 @@ if __name__ == "__main__":
     # The following pattern
     #import webbrowser
     #opera_path="/usr/bin/opera"
-    #webbrowser.register('opera', None,webbrowser.BackgroundBrowser(opera_path),1)     #browser = webbrowser.get("opera")
+    #webbrowser.register('opera', None,webbrowser.BackgroundBrowser(opera_path),1)
+    #browser = webbrowser.get("opera")
     #browser.open(bitmap.show())
 
     # To display the picture with built-in imageviewer [by-defauilt]
@@ -92,4 +93,4 @@ if __name__ == "__main__":
           break
     else:
       print("Nothing saved!")
-      bitmap.show(image_name + ".png")
+      bitmap.show()
