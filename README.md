@@ -4,7 +4,7 @@ Create own fractal images out of prime numbers. Choose between different sets an
 
 Requirements to run:
 
-Python latest version
+Python 2
 
 pip
 
