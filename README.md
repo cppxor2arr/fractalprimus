@@ -11,4 +11,4 @@ Python v.2.7
 Pip - Package Manager Python
 ***
 Pillow - Python Imaging Library (Fork)
- >`pip install pillow`
+ >`# pip install pillow`
