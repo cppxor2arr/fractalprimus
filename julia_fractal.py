@@ -13,19 +13,17 @@ from PIL import Image
 # Driver function
 if __name__ == "__main__":
    
-    # Setting the width, height and zoom 
-    # Of the image to be created
+    # Setting imagewidth, height and zoom 
     w, h, zoom = 1920,1080,1
   
     # Creating the new image in RGB mode
     bitmap = Image.new("RGB", (w, h), "white")
 
-    # Allocating the storage for the image and
-    # Loading the pixel data.
+    # Set storage for the image and load pixel data
     pix = bitmap.load()
    
     # Setting up the variables according to 
-    # The equation to  create the fractal
+    # The equation to create the fractal
     cX, cY = -0.7, 0.27015
     moveX, moveY = 0.7, 0.27015
     maxIter = 255
