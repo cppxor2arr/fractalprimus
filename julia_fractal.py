@@ -1,5 +1,5 @@
 #!/usr/bin/env python2.7
- 
+
                     ##########################
                     #    julia_fractal.py    #
                     #        v_1.2.0         #
@@ -9,25 +9,33 @@ import os, sys, time
 
 # Python code for Julia Fractal
 from PIL import Image
-  
+
 # Driver function
 if __name__ == "__main__":
-   
-    # Setting imagewidth, height and zoom 
-    w, h, zoom = 1920,1080,1
-  
+
+    # Ask for width, height and zoom of picture
+    print("Please choose width and height of the image")
+    print("Example: 1920x1080x1")
+    width = input("Width in pixels: ")
+    height = input("Height in pixels: ")
+    zoom = input("Zoomfactor: ")
+
+    # Setting imagewidth, height and zoom
+    w, h, zoom = width,height,zoom
+
+
     # Creating the new image in RGB mode
     bitmap = Image.new("RGB", (w, h), "white")
 
     # Set storage for the image and load pixel data
     pix = bitmap.load()
-   
+
     # Setting up the variables according to 
     # The equation to create the fractal
     cX, cY = -0.7, 0.27015
     moveX, moveY = 0.7, 0.27015
     maxIter = 255
-  
+
     for x in range(w):
         for y in range(h):
             zx = 1.5*(x - w/2)/(0.5*zoom*w) + moveX
@@ -37,12 +45,12 @@ if __name__ == "__main__":
                 tmp = zx*zx - zy*zy + cX
                 zy,zx = 2.0*zx*zy + cY, tmp
                 i -= 1
- 
+
             # Convert byte to RGB (3 bytes), kinda 
             # Magic to get nice colors
             pix[x,y] = (i << 21) + (i << 10) + i*8
 
-    
+
     #    <-- OUTPUT -->    #
     # To display the created fractal in firefox browser uncomment
     # The following pattern
