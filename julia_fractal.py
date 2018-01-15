@@ -5,10 +5,10 @@
                     #        v_1.2.0         #
                     ##########################
 
-import os, sys, time
 
-# Python code for Julia Fractal
+import os, sys
 from PIL import Image
+
 
 # Driver function
 if __name__ == "__main__":
@@ -16,13 +16,12 @@ if __name__ == "__main__":
     # Ask for width, height and zoom of picture
     print("Please choose width and height of the image")
     print("Example: 1920x1080x1")
-    width = input("Width in pixels: ")
-    height = input("Height in pixels: ")
-    zoom = input("Zoomfactor: ")
+    width = int(raw_input("Width in pixels: "))
+    height = int(raw_input("Height in pixels: "))
+    zoom = int(raw_input("Zoomfactor: "))
 
     # Setting imagewidth, height and zoom
     w, h, zoom = width,height,zoom
-
 
     # Creating the new image in RGB mode
     bitmap = Image.new("RGB", (w, h), "white")
