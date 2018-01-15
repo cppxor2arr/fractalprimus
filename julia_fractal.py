@@ -24,7 +24,7 @@ if __name__ == "__main__":
         print("{}\n{}".format(error_msg, help_msg))
         sys.exit()
 
-    # Setting image width, height, and zoom factor
+    # Setting image width, height, zoom factor, cX, cY, moveX, moveY
     try:
         w, h, zoom = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])
         cX, cY = int(sys.argv[4]), int(sys.argv[5])
