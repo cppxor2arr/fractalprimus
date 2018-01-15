@@ -103,8 +103,12 @@ if __name__ == "__main__":
         image_name = raw_input("Filename: ")
       else:
         extension = "png"
-        bitmap.save("pictures/{}.{}".format(image_name, extension), extension)
-        print("Image as " + image_name + ".png saved!")
+        try:
+            bitmap.save("pictures/{}.{}".format(image_name, extension), extension)
+            print("Image as " + image_name + ".png saved!")
+        except:
+            print("Could not save image: invalid file name?")
+            sys.exit()
     else:
       print("Nothing saved!")
       bitmap.show()
