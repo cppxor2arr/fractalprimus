@@ -14,13 +14,13 @@ from PIL import Image
 if __name__ == "__main__":
 
     # Parse command line arguments
-    help_msg = ("Format: [command] [width] [height] [zoom factor] [cX] [cY] [moveX] [moveY]\n"
+    help_msg = ("Format: [command] [width] [height] [zoom factor] [cX] [cY] [moveX] [moveY] [max iteration]\n"
                 "Use: --help or -h for help")
     error_msg = "Invalid argument(s)"
     if len(sys.argv) == 2 and (sys.argv[1] == "--help" or sys.argv[1] == "-h"):
         print(help_msg)
         sys.exit()
-    elif len(sys.argv) < 8:
+    elif len(sys.argv) < 9:
         print("{}\n{}".format(error_msg, help_msg))
         sys.exit()
 
@@ -29,10 +29,11 @@ if __name__ == "__main__":
         w, h, zoom = int(sys.argv[1]), int(sys.argv[2]), float(sys.argv[3])
         cX, cY = float(sys.argv[4]), float(sys.argv[5])
         moveX, moveY = float(sys.argv[6]), float(sys.argv[7])
+        maxIter = int(sys.argv[8])
     except ValueError:
         print("{}\n{}".format(error_msg, help_msg))
         sys.exit()
-    if w < 1 or h < 1 or zoom <= 0:
+    if w < 1 or h < 1 or zoom <= 0 or maxIter < 1:
         print("{}\n{}".format(error_msg, help_msg))
         sys.exit()
 
@@ -44,7 +45,6 @@ if __name__ == "__main__":
 
     # Setting up the variables according to 
     # The equation to create the fractal
-    maxIter = 255
 
     for x in range(w):
         for y in range(h):
