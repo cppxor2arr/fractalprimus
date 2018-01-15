@@ -91,7 +91,7 @@ if __name__ == "__main__":
         print("Choose another filename..." + image_name + ".png already exists!")
         image_name = raw_input("Filename: ")
       else:
-        bitmap.save(image_name, "png")
+        bitmap.save('./pictures/' + image_name, "png")
         print("Image as " + image_name + ".png saved!")
     else:
       print("Nothing saved!")
