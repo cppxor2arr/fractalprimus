@@ -19,4 +19,4 @@ Pillow - Python Imaging Library (Fork)
 <b>Commands:</b>
 >Usage: `[command] [width] [height] [zoom] [cX] [cY] [moveX] [moveY] [max iteration]`
 
- >`# python julia_fractal.py 1920 1080 1 -0.7 0.27015 0 0 255`
+ >               `# python julia_fractal.py 1920 1080 1 -0.7 0.27015 0 0 255`
