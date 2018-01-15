@@ -14,14 +14,13 @@ from PIL import Image
 if __name__ == "__main__":
 
     # Ask for width, height and zoom of picture
+    # Setting image width, height, and zoom
     print("Please choose width and height of the image")
     print("Example: 1920x1080x1")
-    width = int(raw_input("Width in pixels: "))
-    height = int(raw_input("Height in pixels: "))
+    w = int(raw_input("Width in pixels: "))
+    h = int(raw_input("Height in pixels: "))
     zoom = int(raw_input("Zoomfactor: "))
 
-    # Setting imagewidth, height and zoom
-    w, h, zoom = width,height,zoom
 
     # Creating the new image in RGB mode
     bitmap = Image.new("RGB", (w, h), "white")
