@@ -15,4 +15,5 @@ Pillow - Python Imaging Library (Fork)
  >`# pip install pillow`
 
 Command usage: [command] [width] [height] [zoom] [cX] [cY] [moveX] [moveY] [max iteration]
+
 Example of command: "python julia_fractal.py 1920 1080 1 -0.7 0.27015 0 0 255"
