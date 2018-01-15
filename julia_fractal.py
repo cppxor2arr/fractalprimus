@@ -27,7 +27,7 @@ if __name__ == "__main__":
     # Setting image width, height, zoom factor, cX, cY, moveX, moveY
     try:
         w, h, zoom = int(sys.argv[1]), int(sys.argv[2]), float(sys.argv[3])
-        cX, cY = float(sys.argv[4]), (sys.argv[5])
+        cX, cY = float(sys.argv[4]), float(sys.argv[5])
         moveX, moveY = float(sys.argv[6]), float(sys.argv[7])
     except ValueError:
         print("{}\n{}".format(error_msg, help_msg))
