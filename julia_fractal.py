@@ -97,21 +97,20 @@ if __name__ == "__main__":
     # To save the created bitmap into png or just display it
     decision = raw_input("Save image as .png? [Y/N] ").lower()
     if decision == "y":
-      image_name = raw_input("Filename: ")
-      while os.path.exists(image_name):
-        print("Choose another filename..." + image_name + ".png already exists!")
         image_name = raw_input("Filename: ")
-      else:
-        directory, extension = "pictures", "png"
-        if not os.path.isdir(directory):
-            os.makedirs(directory)
-        try:
-            bitmap.save("{}/{}.{}".format(directory, image_name, extension), extension)
-            print("Image as " + image_name + ".png saved!")
-        except:
-            print("Could not save image: invalid file name?")
-            sys.exit()
+        while os.path.exists(image_name):
+            print("Choose another filename..." + image_name + ".png already exists!")
+            image_name = raw_input("Filename: ")
+        else:
+            directory, extension = "pictures", "png"
+            if not os.path.isdir(directory):
+                os.makedirs(directory)
+            try:
+                bitmap.save("{}/{}.{}".format(directory, image_name, extension), extension)
+                print("Image as " + image_name + ".png saved!")
+            except:
+                print("Could not save image: invalid file name?")
+                sys.exit()
     else:
-      print("Nothing saved!")
-      bitmap.show()
-
+        print("Nothing saved!")
+        bitmap.show()
