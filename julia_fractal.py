@@ -37,6 +37,9 @@ if __name__ == "__main__":
         print("{}\n{}".format(error_msg, help_msg))
         sys.exit()
 
+    #Print message that process is running
+    print("Process running...")
+
     # Creating the new image in RGB mode
     bitmap = Image.new("RGB", (w, h), "white")
 
@@ -45,7 +48,6 @@ if __name__ == "__main__":
 
     # Setting up the variables according to 
     # The equation to create the fractal
-
     for x in range(w):
         for y in range(h):
             zx = 1.5*(x - w/2)/(0.5*zoom*w) + moveX
@@ -94,7 +96,7 @@ if __name__ == "__main__":
     #browser = webbrowser.get("opera")
     #browser.open(bitmap.show())
 
-    # To save the created bitmap into png or just display it
+    # Save the created bitmap into png or just display it
     decision = raw_input("Save image as .png? [Y/N] ").lower()
     if decision == "y":
         image_name = raw_input("Filename: ")
