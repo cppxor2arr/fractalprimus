@@ -14,7 +14,7 @@ from PIL import Image
 if __name__ == "__main__":
 
     # Parse command line arguments
-    help_msg = ("Format: [command] [width] [height] [zoom factor] [cX] [cY] [moveX] [moveY] [max iteration]\n"
+    help_msg = ("Format: [command] [width] [height] [zoom] [cX] [cY] [moveX] [moveY] [max iteration]\n"
                 "Use: --help or -h for help")
     error_msg = "Invalid argument(s)"
     if len(sys.argv) == 2 and (sys.argv[1] == "--help" or sys.argv[1] == "-h"):
@@ -24,7 +24,7 @@ if __name__ == "__main__":
         print("{}\n{}".format(error_msg, help_msg))
         sys.exit()
 
-    # Setting image width, height, zoom factor, cX, cY, moveX, moveY
+    # Setting image width, height, zoom, cX, cY, moveX, moveY
     try:
         w, h, zoom = int(sys.argv[1]), int(sys.argv[2]), float(sys.argv[3])
         cX, cY = float(sys.argv[4]), float(sys.argv[5])
