@@ -13,3 +13,5 @@ Pip - Package Manager Python
 ***
 Pillow - Python Imaging Library (Fork)
  >`# pip install pillow`
+
+Example of command: "python julia_fractal.py 1920 1080 1 -0.7 0.27015 0 0"
