@@ -92,7 +92,7 @@ if __name__ == "__main__":
         image_name = raw_input("Filename: ")
       else:
         extension = "png"
-        bitmap.save("pictures/{}.{}".format(image_name, extension), "{}".format(extension))
+        bitmap.save("pictures/{}.{}".format(image_name, extension), extension)
         print("Image as " + image_name + ".png saved!")
     else:
       print("Nothing saved!")
