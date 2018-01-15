@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
  
                     ##########################
-                    #  JuliaFractal Creator  #
+                    #    julia_fractal.py    #
                     #        v_1.2.0         #
                     ##########################
 
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     #browser = webbrowser.get("opera")
     #browser.open(bitmap.show())
 
-    # To display the picture with built-in imageviewer [by-defauilt]
+    # To save the created bitmap into png or just display it
     decision = raw_input("Save image as .png? [Y/N] ").lower()
     if decision == "y":
       image_name = raw_input("Filename: ")
@@ -90,4 +90,5 @@ if __name__ == "__main__":
         print("Image as " + image_name + ".png saved!")
     else:
       print("Nothing saved!")
- 
+      bitmap.show()
+
