@@ -13,14 +13,28 @@ from PIL import Image
 # Driver function
 if __name__ == "__main__":
 
-    # Ask for width, height and zoom of picture
-    # Setting image width, height, and zoom
-    print("Please choose width and height of the image")
-    print("Example: 1920x1080x1")
-    w = int(raw_input("Width in pixels: "))
-    h = int(raw_input("Height in pixels: "))
-    zoom = int(raw_input("Zoomfactor: "))
+    # Parse command line arguments
+    help_msg = ("Format: [command] [width] [height] [zoom factor] [cX] [cY] [moveX] [moveY]\n"
+                "Use: --help or -h for help")
+    error_msg = "Invalid argument(s)"
+    if len(sys.argv) == 2 and (sys.argv[1] == "--help" or sys.argv[1] == "-h"):
+        print(help_msg)
+        sys.exit()
+    elif len(sys.argv) < 8:
+        print("{}\n{}".format(error_msg, help_msg))
+        sys.exit()
 
+    # Setting image width, height, and zoom factor
+    try:
+        w, h, zoom = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])
+        cX, cY = int(sys.argv[4]), int(sys.argv[5])
+        moveX, moveY = int(sys.argv[6]), int(sys.argv[7])
+    except ValueError:
+        print("{}\n{}".format(error_msg, help_msg))
+        sys.exit()
+    if w < 1 or h < 1 or zoom <= 0:
+        print("{}\n{}".format(error_msg, help_msg))
+        sys.exit()
 
     # Creating the new image in RGB mode
     bitmap = Image.new("RGB", (w, h), "white")
@@ -30,8 +44,6 @@ if __name__ == "__main__":
 
     # Setting up the variables according to 
     # The equation to create the fractal
-    cX, cY = -0.7, 0.27015
-    moveX, moveY = 0.7, 0.27015
     maxIter = 255
 
     for x in range(w):
