@@ -102,9 +102,11 @@ if __name__ == "__main__":
         print("Choose another filename..." + image_name + ".png already exists!")
         image_name = raw_input("Filename: ")
       else:
-        extension = "png"
+        directory, extension = "pictures", "png"
+        if not os.path.isdir(directory):
+            os.makedirs(directory)
         try:
-            bitmap.save("pictures/{}.{}".format(image_name, extension), extension)
+            bitmap.save("{}/{}.{}".format(directory, image_name, extension), extension)
             print("Image as " + image_name + ".png saved!")
         except:
             print("Could not save image: invalid file name?")
