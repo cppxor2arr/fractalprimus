@@ -5,10 +5,8 @@
                     #        v_1.2.0         #
                     ##########################
 
-
 import os, sys
 from PIL import Image
-
 
 # Driver function
 if __name__ == "__main__":
@@ -37,14 +35,14 @@ if __name__ == "__main__":
         print("{}\n{}".format(error_msg, help_msg))
         sys.exit()
 
-    #Print message that process is running
-    print("Process running...")
-
     # Creating the new image in RGB mode
     bitmap = Image.new("RGB", (w, h), "white")
 
     # Set storage for the image and load pixel data
     pix = bitmap.load()
+
+    #Print message that process is running
+    print("Process running...")
 
     # Setting up the variables according to 
     # The equation to create the fractal
