@@ -41,12 +41,14 @@ if __name__ == "__main__":
     # Set storage for the image and load pixel data
     pix = bitmap.load()
 
-    #Print message that process is running
+    # Print message that process is running
     print("Process running...")
 
+    # Set values for progress bar
+    p25, p50, p75 = float( 1.0 / 4 * w), float( 1.0 / 2 * w), float( 3.0 / 4 * w)
+
     # Setting up the variables according to 
-    # The equation to create the fractal
-    p25, p50, p75 = round(1.0 / 4 * w), round(1.0 / 2 * w), round(3.0 / 4 * w)
+    # Equation to create the fractal
     for x in range(w):
         for y in range(h):
             zx = 1.5*(x - w/2)/(0.5*zoom*w) + moveX
@@ -57,17 +59,21 @@ if __name__ == "__main__":
                 zy,zx = 2.0*zx*zy + cY, tmp
                 i -= 1
 
-            # Convert byte to RGB (3 bytes), kinda 
-            # Magic to get nice colors
+            # Convert byte to RGB (3 bytes) 
             pix[x,y] = (i << 21) + (i << 10) + i*8
+        
+        # Print progress and flush immediately if x is true
         if x == p25:
-            print("25%")
+            sys.stdout.write(("\r" + "25% [##........]").encode("utf-8")); sys.stdout.flush()
         elif x == p50:
-            print("50%")
+            sys.stdout.write(("\r" + "50% [#####.....]").encode("utf-8")); sys.stdout.flush()
         elif x == p75:
-            print("75%")
-    print("100%")
-    #    <-- OUTPUT -->    #
+            sys.stdout.write(("\r" + "75% [#######...]").encode("utf-8")); sys.stdout.flush()
+    
+    sys.stdout.write(("\r" + "100% [##########]").encode("utf-8"))
+    sys.stdout.write(("\n" + "DONE!").encode("utf-8"))
+    
+
     # To display the created fractal in firefox browser uncomment
     # The following pattern
     #import webbrowser
@@ -100,8 +106,9 @@ if __name__ == "__main__":
     #browser = webbrowser.get("opera")
     #browser.open(bitmap.show())
 
-    # Save the created bitmap into png or just display it
-    decision = raw_input("Save image as .png? [Y/N] ").lower()
+    # Save the created bitmap as png or only display it without saving
+    # Show it with default_image_viewer
+    decision = raw_input("\nSave image as .png? [Y/N] ").lower()
     if decision == "y":
         image_name = raw_input("Filename: ")
         while os.path.exists(image_name):
