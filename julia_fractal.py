@@ -79,17 +79,17 @@ if __name__ == "__main__":
     # Show it with default_image_viewer
     decision = raw_input("\nSave image as .png? [Y/N] ").lower()
     if decision == "y":
+        directory, extension = "pictures", "png"
+        if not os.path.isdir(directory):
+            os.makedirs(directory)
         image_name = raw_input("Filename: ")
-        while os.path.exists(image_name):
-            print("Choose another filename..." + image_name + ".png already exists!")
+        while os.path.exists(directory + "/" + image_name + "." + extension):
+            print("Choose another filename..." + image_name + "." + extension + " already exists!")
             image_name = raw_input("Filename: ")
         else:
-            directory, extension = "pictures", "png"
-            if not os.path.isdir(directory):
-                os.makedirs(directory)
             try:
                 bitmap.save("{}/{}.{}".format(directory, image_name, extension), extension)
-                print("Image as " + image_name + ".png saved!")
+                print("Image as " + image_name + "." + extension + " saved!")
             except:
                 print("Could not save image: invalid file name?")
                 sys.exit()
