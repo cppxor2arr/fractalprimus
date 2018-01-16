@@ -19,7 +19,7 @@ if __name__ == "__main__":
         print(help_msg)
         sys.exit()
     elif len(sys.argv) < 9:
-        print("{}\n{}".format(error_msg, help_msg))
+        print(error_msg + "\n" + help_msg)
         sys.exit()
 
     # Setting image width, height, zoom, cX, cY, moveX, moveY
@@ -29,10 +29,10 @@ if __name__ == "__main__":
         moveX, moveY = float(sys.argv[6]), float(sys.argv[7])
         maxIter = int(sys.argv[8])
     except ValueError:
-        print("{}\n{}".format(error_msg, help_msg))
+        print(error_msg + "\n" + help_msg)
         sys.exit()
     if w < 1 or h < 1 or zoom <= 0 or maxIter < 1:
-        print("{}\n{}".format(error_msg, help_msg))
+        print(error_msg + "\n" + help_msg)
         sys.exit()
 
     # Creating the new image in RGB mode
@@ -88,7 +88,7 @@ if __name__ == "__main__":
             image_name = raw_input("Filename: ")
         else:
             try:
-                bitmap.save("{}/{}.{}".format(directory, image_name, extension), extension)
+                bitmap.save(directory + "/" + image_name + "." + extension, extension)
                 print("Image as " + image_name + "." + extension + " saved!")
             except:
                 print("Could not save image: invalid file name?")
