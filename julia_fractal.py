@@ -64,13 +64,16 @@ if __name__ == "__main__":
         
         # Print progress and flush immediately if x is true
         if x == p25:
-            sys.stdout.write(("25% [##........]\r").encode("utf-8")); sys.stdout.flush()
+            sys.stdout.write(("25% [##........]\n").encode("utf-8")); sys.stdout.flush()
         elif x == p50:
-            sys.stdout.write(("50% [#####.....]\r").encode("utf-8")); sys.stdout.flush()
+            sys.stdout.write("\033[F")
+            sys.stdout.write(("50% [#####.....]\n").encode("utf-8")); sys.stdout.flush()
         elif x == p75:
-            sys.stdout.write(("75% [#######...]\r").encode("utf-8")); sys.stdout.flush()
+            sys.stdout.write("\033[F")
+            sys.stdout.write(("75% [#######...]\n").encode("utf-8")); sys.stdout.flush()
     
-    sys.stdout.write(("100% [##########]\r").encode("utf-8"))
+    sys.stdout.write("\033[F")
+    sys.stdout.write(("100% [##########]").encode("utf-8"))
     sys.stdout.write(("\n" + "DONE!").encode("utf-8"))
     
 
