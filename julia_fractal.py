@@ -46,6 +46,7 @@ if __name__ == "__main__":
 
     # Setting up the variables according to 
     # The equation to create the fractal
+    p25, p50, p75 = round(1.0 / 4 * w), round(1.0 / 2 * w), round(3.0 / 4 * w)
     for x in range(w):
         for y in range(h):
             zx = 1.5*(x - w/2)/(0.5*zoom*w) + moveX
@@ -59,8 +60,13 @@ if __name__ == "__main__":
             # Convert byte to RGB (3 bytes), kinda 
             # Magic to get nice colors
             pix[x,y] = (i << 21) + (i << 10) + i*8
-
-
+        if x == p25:
+            print("25%")
+        elif x == p50:
+            print("50%")
+        elif x == p75:
+            print("75%")
+    print("100%")
     #    <-- OUTPUT -->    #
     # To display the created fractal in firefox browser uncomment
     # The following pattern
