@@ -1,10 +1,10 @@
 #!/usr/bin/env python2.7
 # -*- coding: utf-8 -*
 
-                    ##########################
-                    #    julia_fractal.py    #
-                    #        v_1.2.0         #
-                    ##########################
+##########################
+#    julia_fractal.py    #
+#        v_1.2.0         #
+##########################
 
 import os, sys
 from PIL import Image
@@ -48,8 +48,7 @@ if __name__ == "__main__":
     # Set values for progress bar
     p25, p50, p75 = float( 1.0 / 4 * w), float( 1.0 / 2 * w), float( 3.0 / 4 * w)
 
-    # Setting up the variables according to 
-    # Equation to create the fractal
+    # Setting up the variables according to equation to create the fractal
     for x in range(w):
         for y in range(h):
             zx = 1.5*(x - w/2)/(0.5*zoom*w) + moveX
@@ -60,7 +59,7 @@ if __name__ == "__main__":
                 zy,zx = 2.0*zx*zy + cY, tmp
                 i -= 1
 
-            # Convert byte to RGB (3 bytes) 
+            # Convert byte to RGB
             pix[x,y] = (i << 21) + (i << 10) + i*8
         
         # Print progress and flush immediately if x is true
@@ -73,11 +72,10 @@ if __name__ == "__main__":
     
 
     sys.stdout.write("100% [####################]"); sys.stdout.flush()
-    sys.stdout.write("\n" + "DONE!"); sys.stdout.flush()
+    sys.stdout.write("\nDONE!"); sys.stdout.flush()
     
 
-    # Save the created bitmap as png or only display it without saving
-    # Show it with default_image_viewer
+    # Save created bitmap as png or display without saving [default_image_viewer]
     decision = raw_input("\nSave image as .png? [Y/N] ").lower()
     if decision == "y":
         directory, extension = "pictures", "png"
