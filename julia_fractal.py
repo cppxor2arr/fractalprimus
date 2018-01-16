@@ -1,4 +1,5 @@
 #!/usr/bin/env python2.7
+# -*- coding: utf-8 -*
 
                     ##########################
                     #    julia_fractal.py    #
@@ -64,15 +65,15 @@ if __name__ == "__main__":
         
         # Print progress and flush immediately if x is true
         if x == p25:
-            sys.stdout.write(("25% [######..............]\r").encode("utf-8")); sys.stdout.flush()
+            sys.stdout.write("25% [######..............]\r"); sys.stdout.flush()
         elif x == p50:
-            sys.stdout.write(("50% [##########..........]\r").encode("utf-8")); sys.stdout.flush()
+            sys.stdout.write("50% [##########..........]\r"); sys.stdout.flush()
         elif x == p75:
-            sys.stdout.write(("75% [##############......]\r").encode("utf-8")); sys.stdout.flush()
+            sys.stdout.write("75% [##############......]\r"); sys.stdout.flush()
     
 
-    sys.stdout.write(("100% [####################]").encode("utf-8"))
-    sys.stdout.write(("\n" + "DONE!").encode("utf-8"))
+    sys.stdout.write("100% [####################]"); sys.stdout.flush()
+    sys.stdout.write("\n" + "DONE!"); sys.stdout.flush()
     
 
     # Save the created bitmap as png or only display it without saving
