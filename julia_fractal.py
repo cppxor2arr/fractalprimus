@@ -75,38 +75,6 @@ if __name__ == "__main__":
     sys.stdout.write(("\n" + "DONE!").encode("utf-8"))
     
 
-    # To display the created fractal in firefox browser uncomment
-    # The following pattern
-    #import webbrowser
-    #firefox_path="/usr/bin/firefox"
-    #webbrowser.register('firefox', None,webbrowser.BackgroundBrowser(firefox_path),1)
-    #browser = webbrowser.get("firefox")
-    #browser.open(bitmap.show())
-
-    # To display the created fractal in chromium browser uncomment
-    # The following pattern
-    #import webbrowser
-    #chromium_path="/usr/bin/chromium"
-    #webbrowser.register('chromium', None,webbrowser.BackgroundBrowser(chromium_path),1)
-    #browser = webbrowser.get("chromium")
-    #browser.open(bitmap.show())
-
-    # To display the created fractal in qupzilla browser uncomment
-    # The following pattern
-    #import webbrowser
-    #qupzilla_path="/usr/bin/qupzilla"
-    #webbrowser.register('qupzilla', None,webbrowser.BackgroundBrowser(qupzilla_path),1)
-    #browser = webbrowser.get("qupzilla")
-    #browser.open(bitmap.show())
-
-    # To display the created fractal in opera browser uncomment
-    # The following pattern
-    #import webbrowser
-    #opera_path="/usr/bin/opera"
-    #webbrowser.register('opera', None,webbrowser.BackgroundBrowser(opera_path),1)
-    #browser = webbrowser.get("opera")
-    #browser.open(bitmap.show())
-
     # Save the created bitmap as png or only display it without saving
     # Show it with default_image_viewer
     decision = raw_input("\nSave image as .png? [Y/N] ").lower()
