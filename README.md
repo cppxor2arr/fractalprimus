@@ -1,7 +1,6 @@
 # Creating Fractals
->Create fractal images out of prime numbers. Choose between different sets of formulas. 
+>Create fractal images with the famous julia set.<br>
 >Change color and add a proper size adjustment. You will truly love it!
-><i>*In development*</i>
 
 <br><br>
 
