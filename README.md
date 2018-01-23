@@ -1,4 +1,4 @@
-# Creating Fractals
+# Julia Fractals
 >Create fractal images with the famous julia set.<br>
 >Change color and add a proper size adjustment. You will truly love it!
 
